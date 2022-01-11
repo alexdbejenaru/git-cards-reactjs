@@ -1,0 +1,9 @@
+.search-container {
+    width: 100%;
+    background-color: var(--secondary-bg-color);
+    .form {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+}

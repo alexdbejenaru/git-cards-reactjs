@@ -1,0 +1,19 @@
+:root {
+    // Light Mode Colors
+    --primary-bg-color: hsl(222, 100%, 98%);
+    --secondary-bg-color: hsl(0, 0%, 100%);
+    --primary-txt-color: hsl(220, 3%, 34%);
+    --secondary-txt-color: hsl(223, 19%, 37%);
+    --cta-color: hsl(211, 100%, 50%);
+    --link-color: hsl(216, 69%, 29%);
+}
+
+:root.dark {
+    // Dark Mode Colors
+    --primary-bg-color: hsl(222, 40%, 13%);
+    --secondary-bg-color: hsl(224, 40%, 20%);
+    --primary-txt-color: hsl(212, 60%, 95%);
+    --secondary-txt-color: hsl(223, 19%, 37%);
+    --cta-color: hsl(211, 100%, 50%);
+    --link-color: hsl(216, 69%, 29%);
+}
