@@ -2,6 +2,7 @@ import Header from "./components/Header";
 import SearchField from "./components/SearchField";
 import UserInfo from "./components/UserInfo";
 import { useState, useEffect } from "react";
+import Loading from "./components/Loading";
 
 function App() {
   const [ user, setUser ] = useState('');
@@ -30,7 +31,10 @@ function App() {
         })
     }, [user, url])
 
-  return (
+    return (
+      <>
+      {error && <div>{ error }</div>}
+    {loading && <Loading />}
     <main className="app">
       <section className="app_container">
         <Header />
@@ -38,6 +42,7 @@ function App() {
         <UserInfo data={ data } />
       </section>
     </main>
+      </>
   );
 }
 
