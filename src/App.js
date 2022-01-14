@@ -5,37 +5,37 @@ import { useState, useEffect } from "react";
 
 function App() {
   const [ user, setUser ] = useState('');
-  const url = `https://api.github.com/users/${user}`;
+  const url = 'https://api.github.com/users';
   const [ data, setData ] = useState([]);
   const [ loading, setLoading ] = useState(true);
   const [ error, setError ] = useState(null);
 
   useEffect(() => {
-    fetch(url)
-      .then((response) => {
-        if (response.ok) {
-          return response.json();
-        }
-        throw response;
-      })
-      .then(response => {
-        setData(response);
-      })
-      .catch((error) => {
-        console.error('Error fetching data: ', error);
-        setError(error);
-      })
-      .finally(() => {
-        setLoading(false);
-      })
-  }, [url])
+      fetch(`${url}/${user}`)
+        .then((response) => {
+          if (response.ok) {
+            return response.json();
+          }
+          throw response;
+        })
+        .then(response => {
+          setData(response);
+        })
+        .catch((error) => {
+          console.error('Error fetching data: ', error);
+          setError(error);
+        })
+        .finally(() => {
+          setLoading(false);
+        })
+    }, [user, url])
 
   return (
     <main className="app">
       <section className="app_container">
         <Header />
-        <SearchField user={ user } setUser={ setUser } />
-        <UserInfo data={data}/>
+        <SearchField setUser={ setUser } />
+        <UserInfo data={ data } />
       </section>
     </main>
   );

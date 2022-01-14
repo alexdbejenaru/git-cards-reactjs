@@ -1,0 +1,10 @@
+.user-container {
+    .card {
+        &_avatar {
+            border-radius: 50%;
+            height: 10rem;
+            width: 10rem;
+            border: lightblue 5px solid;
+        }
+    }
+}
