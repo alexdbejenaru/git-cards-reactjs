@@ -1,11 +1,19 @@
-const UserInfo = ({ data }) => {
+// import Loading from "./Loading";
+
+const UserInfo = ({ data, loading, error }) => {
     return ( 
-        <section className="user-container">
-            <h1>{data.login}</h1>
-            <h1>{data.name}</h1>
-            <div>{data.blog}</div>
-            <img className="card_avatar" src={data.avatar_url} alt='Profile' />
-        </section>
+        <>
+        {/* {loading && <Loading />}
+        {error && <div>{ error }</div>} */}
+                {data && (
+                <section className="user-container">
+                    <h1>{data.login}</h1>
+                    <h1>{data.name}</h1>
+                    <div>{data.blog}</div>
+                    <img className="card_avatar" src={data.avatar_url} alt='Profile' />
+                </section>
+            )}
+        </>
      );
 }
  
